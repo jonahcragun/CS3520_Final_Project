@@ -1,3 +1,4 @@
+-- populate card table
 INSERT IGNORE INTO card (id, card_reference) VALUES
                   (1, 'card_ref_001'),
                   (2, 'card_ref_002'),
@@ -19,6 +20,7 @@ DELETE FROM reservation WHERE TRUE;
 ALTER TABLE reservation AUTO_INCREMENT = 1;
 DELETE FROM `table` WHERE TRUE;
 ALTER TABLE `table` AUTO_INCREMENT = 1;
+-- populate table table
 INSERT INTO `table` (table_size)
 VALUES
     (2), (4), (6), (8),
@@ -27,6 +29,7 @@ VALUES
     (2), (4), (6), (8),
     (2), (4), (6), (8);
 
+-- populate open_hours table
 INSERT IGNORE INTO open_hours (day_of_week, open_time, close_time)
 VALUES
     ('Monday', '08:00:00', '22:00:00'),
@@ -40,6 +43,7 @@ VALUES
 DELETE FROM customer WHERE TRUE;
 ALTER TABLE customer AUTO_INCREMENT = 1;
 
+-- populate customer table
 INSERT INTO `customer` (first_name, last_name, phone, email, address, City, State)
 VALUES
                             ('Aaron','Zalmon','(801)000-0000','aaron_zalmon@mail.com','0 West 0 North','Salt Lake City','Utah'),
@@ -148,7 +152,7 @@ VALUES
                             ('Carona','Xalmonz','(801)116-0116','carona_xalmonz@mail.com','780 West 780 North','Salt Lake City','Utah');
 
 
-
+-- populate reservation table
 CALL make_reservation(1, '2024-12-06 08:00:00', 6, 1);
 CALL make_reservation(2, '2024-12-06 08:15:00', 4, 2);
 CALL make_reservation(3, '2024-12-06 10:00:00', 8, 3);
